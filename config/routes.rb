@@ -1,5 +1,21 @@
+# app/config/routes.rb
+
 Rails.application.routes.draw do
-  root 'articles#index'
+devise_scope :user do
+  root to: "devise/sessions#new"
+end
+
   get 'articles/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/dashboard', to: 'dashboards#index'
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
+  resources :articles
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end
