@@ -1,19 +1,18 @@
 # app/config/routes.rb
 
 Rails.application.routes.draw do
-devise_scope :user do
-  root to: "devise/sessions#new"
-end
-
-  get 'articles/index'
-  get '/dashboard', to: 'dashboards#index'
-
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
 
-  resources :articles
+  authenticate :user do
+    root 'home#index', as: :authenticated_root
+    get '/dashboard', to: 'dashboards#index'
+    resources :articles
+  end
+
+  root to: 'devise/sessions#new'
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
