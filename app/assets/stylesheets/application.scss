@@ -1,3 +1,5 @@
+/* app/assets/stylesheets/application.scss */
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,6 +12,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+  @import "bootstrap";
+  @import "custom";
+
+ // Note that require_tree and require_self are not used with SASS @import
+ // *= require_tree . (This line should be removed or commented out)
+ // *= require_self (This line should be removed or commented out)
