@@ -16,7 +16,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(resource)
-    '/dashboard'  # ここにリダイレクト先を指定
+    users_dash_boards_path  # リダイレクト先を名前付きルートに変更
   end
 
   # DELETE /resource/sign_out
