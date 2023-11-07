@@ -1,0 +1,43 @@
+/* app/assets/stylesheets/application.scss */
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+  @import "bootstrap";
+  @import "custom";
+
+ // Note that require_tree and require_self are not used with SASS @import
+ // *= require_tree . (This line should be removed or commented out)
+ // *= require_self (This line should be removed or commented out)
+
+// 全体のh2とh3のスタイルはそのまま
+h2, h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+// テーブルのセルは中央揃え
+th, td {
+  text-align: center;
+}
+
+.greeting-text {
+  font-size: 24px; /*ダッシュボードの挨拶 */
+}
+
+.custom-form {
+  width: 300px; // 幅をピクセルで指定
+  display: block; // ブロックレベル要素として表示
+  margin-bottom: 10px; // 下マージンを設定
+}
