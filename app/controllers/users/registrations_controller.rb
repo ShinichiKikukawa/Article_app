@@ -20,9 +20,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super do |resource|
+      if resource.errors.empty?
+        flash[:notice] = 'アカウント情報が更新されました'
+      end
+    end
+  end
 
   # DELETE /resource
   # def destroy

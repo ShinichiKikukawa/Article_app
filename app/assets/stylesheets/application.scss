@@ -15,7 +15,6 @@
  */
 
   @import "bootstrap";
-  @import "custom";
 
  // Note that require_tree and require_self are not used with SASS @import
  // *= require_tree . (This line should be removed or commented out)
@@ -25,6 +24,7 @@
 h2, h3 {
   text-align: center;
   font-weight: bold;
+  margin-top: 50px; /* マージンを追加して h2 の位置を調整 */
 }
 
 // テーブルのセルは中央揃え
@@ -40,4 +40,9 @@ th, td {
   width: 300px; // 幅をピクセルで指定
   display: block; // ブロックレベル要素として表示
   margin-bottom: 10px; // 下マージンを設定
+}
+
+.notice, .alert {
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  text-align: center; /* テキストを中央揃えにする */
 }

@@ -4,6 +4,14 @@
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum; this matches the default thread size of Active Record.
 #
+
+# サーバーが起動する前に実行されるブロック
+#before_fork do
+  # server.pid ファイルの存在をチェックし、存在すれば削除
+  #pidfile = 'tmp/pids/server.pid'
+  #File.delete(pidfile) if File.exist?(pidfile)
+#end
+
 max_threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
 min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
 threads min_threads_count, max_threads_count
