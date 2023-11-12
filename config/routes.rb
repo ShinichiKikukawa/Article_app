@@ -1,12 +1,20 @@
-# app/config/routes.rb
+# config/routes.rb
 
 Rails.application.routes.draw do
-  # deviseのルート設定
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
-  # devise_scopeを使ってカスタムルートを設定
+  # Deviseスコープブロックを使用
   devise_scope :user do
-    root to: 'users/sessions#new'
+    authenticated :user do
+      root to: 'users#index', as: :authenticated_root
+    end
+
+    unauthenticated :user do
+      root to: 'users/sessions#new'
+    end
   end
 
   # ユーザーダッシュボードへのルートを設定（パスを変更）

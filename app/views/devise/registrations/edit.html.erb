@@ -1,7 +1,7 @@
 <%# app/views/devise/registrations/edit.html.erb %>
-<div class="container">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+<div class="container">
+  <h2><%= t(".title", resource: current_user.name) %></h2>
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -24,10 +24,10 @@
         <% end %>
 
         <div class="mb-3">
-          <%= f.label :password, class: 'form-label' %> <i>(leave blank if you don't want to change it)</i>
+          <%= f.label :password, class: 'form-label' %> <i>(変更しない場合は空白のままにしてください)</i>
           <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
           <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <em>(<%= @minimum_password_length %>文字以上)</em>
           <% end %>
         </div>
 
@@ -37,23 +37,23 @@
         </div>
 
         <div class="mb-3">
-          <%= f.label :current_password, class: 'form-label' %> <i>(we need your current password to confirm your changes)</i>
+          <%= f.label :current_password, class: 'form-label' %> <i>(変更を確認するために、現在のパスワードが必要です)</i>
           <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
         </div>
 
         <div class="d-flex justify-content-center mt-4">
-          <%= f.submit "Update", class: "btn btn-primary btn-lg" %>
+          <%= f.submit t(".update"), class: "btn btn-primary btn-lg" %>
         </div>
       <% end %>
 
-      <h3 class="text-center">Cancel my account</h3>
-      <p class="text-center">Unhappy? You can cancel your account.</p>
+      <h3 class="text-center"><%= t(".cancel_my_account") %></h3>
+        <p class="text-center">お気に召しませんか？アカウントをキャンセルできます</p>
       <div class="d-flex justify-content-center">
-        <%= button_to "Cancel my account", registration_path(resource_name), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-lg" %>
+        <%= button_to t(".cancel_my_account"), registration_path(resource_name), method: :delete, data: { confirm: '本当によろしいですか？' }, class: "btn btn-danger btn-lg" %>
       </div>
 
       <div class="d-flex justify-content-center mt-4">
-        <%= link_to 'Back', :back, class: "btn btn-secondary btn-lg" %>
+        <%= link_to t(".back"), :back, class: "btn btn-secondary btn-lg" %>
       </div>
     </div>
   </div>

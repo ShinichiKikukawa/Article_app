@@ -12,6 +12,9 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/plugin-transform-private-methods": "^7.22.5",
+    "@babel/plugin-transform-private-property-in-object": "^7.23.3",
     "webpack-dev-server": "^3"
   },
   "packageManager": "yarn@1.22.19"
