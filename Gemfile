@@ -15,6 +15,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'mini_magick'
+gem 'carrierwave'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "redis", "~> 5.0"

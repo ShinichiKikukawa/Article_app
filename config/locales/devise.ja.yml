@@ -11,7 +11,7 @@ ja:
         current_sign_in_ip: 現在のログインIPアドレス
         name: 名前
         introduction: 自己紹介文
-        email: Eメール
+        email: メールアドレス
         encrypted_password: 暗号化パスワード
         failed_attempts: 失敗したログイン試行回数
         last_sign_in_at: 最終ログイン時刻
@@ -20,7 +20,7 @@ ja:
         password: パスワード
         password_confirmation: パスワード（確認用）
         remember_created_at: ログイン記憶時刻
-        remember_me: ログインを記憶する
+        remember_me: 次回から自動的にログイン
         reset_password_sent_at: パスワードリセット送信時刻
         reset_password_token: パスワードリセット用トークン
         sign_in_count: ログイン回数

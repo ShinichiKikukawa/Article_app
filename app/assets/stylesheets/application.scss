@@ -27,10 +27,11 @@ h2, h3 {
   margin-top: 50px; /* マージンを追加して h2 の位置を調整 */
 }
 
-// テーブルのセルは中央揃え
+// テーブルのセルは中央揃え、ボーダーを太く
 th, td {
   text-align: center;
 }
+
 
 .greeting-text {
   font-size: 24px; /*ダッシュボードの挨拶 */
@@ -45,4 +46,14 @@ th, td {
 .notice, .alert {
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
   text-align: center; /* テキストを中央揃えにする */
+}
+
+// テーブルのスタイル調整
+.table th, .table td {
+  text-align: center;
+  width: 20%; // 5つのカラムを均等に分布させる
+}
+
+.actions {
+  text-align: center;
 }
