@@ -13,11 +13,8 @@
       </thead>
       <tbody>
         <tr>
-          <!-- タイトル -->
           <td><%= @article.title %></td>
-          <!-- 内容 -->
           <td><%= @article.content %></td>
-          <!-- 画像 -->
           <td><%= image_tag @article.image.url(:thumb) if @article.image.present? %></td>
         </tr>
       </tbody>
