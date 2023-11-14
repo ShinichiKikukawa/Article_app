@@ -1,7 +1,9 @@
-<p>Hello <%= @resource.email %>!</p>
+<%# app/views/devise/mailer/unlock_instructions.html.erb %>
 
-<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+<p><%= @resource.email %>さん、こんにちは！</p>
 
-<p>Click the link below to unlock your account:</p>
+<p>何度もの不正なサインイン試行により、あなたのアカウントがロックされました。</p>
 
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+<p>以下のリンクからアカウントのロックを解除できます：</p>
+
+<p><%= link_to 'アカウントのロックを解除する', unlock_url(@resource, unlock_token: @token) %></p>
